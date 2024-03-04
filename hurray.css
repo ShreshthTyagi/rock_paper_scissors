@@ -1,0 +1,157 @@
+.container {
+    height: 100vh;
+    width: 100vw;
+}
+ * {
+     margin: 0;
+}
+ button:hover {
+     cursor: pointer;
+}
+
+body {
+    background: #8CC461;
+    font-family: "Roboto", sans-serif;
+}
+
+.stars_can {
+    position: relative;
+    display: grid;
+    top: 4.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 'st st';
+    place-items: center;
+    background-image: url("./trophy.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: bottom;
+}
+
+.stars {
+    grid-area: st;
+}
+
+.replay {
+    display: flex;
+    border: none;
+    background-color: white;
+    color: #6B6B6B;
+    font-family: roboto;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 17.58px;
+    border-radius: 10px;
+    height: 40px;
+    width: 135px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.textContent{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 'hr hr hr'
+                        'yw yw yw'
+                        'btn btn btn';
+    place-items: center;
+    margin-top: 7rem;
+}
+
+.textContent > h1 {
+    grid-area: hr;
+    color: white;
+    margin-bottom: 1rem;
+    font-family: roboto;
+    font-weight: 600;
+    font-size: 85px;
+    line-height: 106.64px;
+}
+
+.textContent > h2 {
+    grid-area: yw;
+    color: white;
+    margin-bottom: 2.5rem;
+    font-family: roboto;
+    font-weight: 600;
+    font-size: 41px;
+    line-height: 48.05px;
+}
+
+.textContent > a {
+    grid-area: btn;
+}
+
+/* Rules */
+
+.rules {
+    font-family: inherit;
+    font-size: 1.32rem;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    background: none;
+    border-radius: 10px;
+    border: 2px solid white;
+    color: white;
+    height: 40px;
+    width: 119px;
+}
+
+.rules_tab {
+    position: absolute;
+    height: auto;
+    width: 300px;
+    display: grid;
+    border: 7px solid white;
+    border-radius: 9px;
+    background-color: #004429;
+    top: 17.8rem;
+    right: 2rem;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.display-rules {
+    opacity: 1;
+}
+
+.rules_heading > h2 {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.rules_list {
+    margin: 10px 10px 5px 2px; 
+}
+
+.rules_list > li {
+    margin-bottom: 1rem;
+    list-style-type: square;  
+}
+
+li::marker {
+    color: #FFD600;
+    font-size: 30px;
+    line-height: 0.5em;
+}
+
+.rules_btn {
+    display: flex;
+    position:absolute;
+    color: white;
+    background-color: #FF0000;
+    width: 50px;
+    height: 50px;
+    border: 5px solid white;
+    border-radius: 50%;
+    font-size: 34px;
+    font-weight: 400;
+    font-family: "Dangrek", sans-serif;
+    top: -30px;
+    right: -30px;
+    justify-content: center;
+    align-items: center;
+}

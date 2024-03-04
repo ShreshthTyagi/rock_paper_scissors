@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper or Scissors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dangrek&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="scoreframe">
+                <div class="logo">
+                    <p>ROCK</p>
+                    <p>PAPER</p>
+                    <p>SCISSORS</p>
+                </div>
+            <div class="scoreboxes">
+                <div class="cbox">
+                    <p class="cdisplay">COMPUTER <span class="separate">&#10;</span> SCORE</p>
+                    <p class="cScore" id="computerScore">0</p>
+                </div>
+                <div class="ybox">
+                    <p class="ydisplay">YOUR <span class="separate">&#10;</span> SCORE</p>
+                    <p class="yScore" id="userScore">0</p>
+                </div>
+            </div>
+        </div>
+        <div class="game">
+            <button class="user_btn" data-choice="rock">
+                <div class="user rock"><img src="rock.png" alt="rock image"></div>
+            </button>
+            <div class="line" data-choice="rs"></div>
+            <button class="user_btn" data-choice="scissor">
+                <div class="user scissor"><img src="scissor.png" alt="scissor line"></div>
+            </button>
+            <div class="line pr" data-choice="pr"></div>
+            <div class="blank"></div>
+            <div class="line sp" data-choice="sp"></div>
+            <button class="user_btn" data-choice="paper">
+                <div class="user paper"><img src="paper.png" alt="paper image"></div>
+            </button>
+        </div>
+
+        <!-- results -->
+        <div class="results hide">
+            <h2 class="picks">YOU PICKED</h2>
+            <div class="blank"></div>
+            <h2 class="picks">PC PICKED</h2>
+            <div class="choice circles uchoice"></div>
+            <div class="is_winner">
+                <div class="winner" id="winner_winner"></div>
+                <div class="swinner" id="swinner_winner"></div>
+                <button class="replay">PLAY AGAIN</button>
+            </div>
+            <div class="choice circles pchoice"></div>
+        </div>
+        <!-- Rules -->
+        <div class="ftr">
+            <button class="rule" tabindex="1">RULES</button>
+            <a href="./hurray.html" class="next hidden">NEXT</a>
+        </div>
+        <div class="rules_tab">
+            <div class="rules_heading">
+                <h2>Game Rules</h2>
+                <button class="rules_btn">X</button>
+            </div>
+            <ul class="rules_list">
+                <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                <li>Agree ahead of time whether you'll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”</li>
+                <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time</li>
+                <li>If both players lay down the same hand, each player lays down another hand</li>
+            </ul>
+        </div>
+    </div>
+    <script src="./games.js"></script>
+</body>
+</html>

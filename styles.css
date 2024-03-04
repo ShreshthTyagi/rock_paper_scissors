@@ -1,0 +1,387 @@
+.container {
+   height: 100vh;
+   width: 100vw;
+}
+* {
+    margin: 0;
+}
+button:hover {
+    cursor: pointer;
+  }
+
+
+body {
+    background: #8CC461;
+    font-family: "Roboto", sans-serif;
+}
+.scoreframe {
+    position: relative;
+    border: 2px solid white;
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px;
+    top: 3rem;
+    margin: 0 auto;
+    border-radius: 13px;
+    height: 150px;
+    padding: 1rem 2rem 1rem 2rem;
+}
+
+.logo {
+    align-self: center;
+    font-size: 42px;
+    font-weight: 600;
+    text-align: left;
+    color: white;
+}
+
+.scoreboxes {
+    display: inline flex;
+    justify-content: space-between;
+    width: 310px;
+}
+
+.cbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 10px;
+    width: 150px;
+    height: 100%;
+    line-height: 1;
+}
+
+.cdisplay {
+    font-size: 1.1rem;
+    letter-spacing: 0.1rem;
+    color: #656565;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.cScore {
+    font-size: 4.1rem;
+    font-weight: 700;
+    color: #252525;
+}
+
+.ybox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 10px;
+    width: 150px;
+    height: 100%;
+    line-height: 1;
+}
+
+.ydisplay {
+    font-size: 1.1rem;
+    letter-spacing: 0.1rem;
+    color: #656565;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.yScore {
+    font-size: 4.1rem;
+    font-weight: 700;
+    color: #252525;
+}
+
+.separate {
+    white-space: pre;
+}
+
+
+/* Game Buttons */
+
+.game {
+    position: relative;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-areas: "rock rs scissor"
+                        "pr blank sp"
+                        "paper paper paper";
+    place-items: center;
+    top: 5rem;
+    height: 25rem;
+    width: 25rem;
+}
+
+.game::before {
+    content: '';
+    border-top: 15px solid #000000;
+    width:100%;
+    z-index: -1;
+}
+
+.line [data-choice="rs"] {
+    grid-area: rs;
+}
+.line [data-choice="pr"] {
+    grid-area: pr;
+}
+.line.pr::before {
+    content: '';
+    position: absolute;
+    border-top: 15px solid #000000;
+    left: 10%;
+    width:50%;
+    transform: rotate(53deg);
+    z-index: -2;
+}
+.line [data-choice="sp"] {
+    grid-area: sp;
+}
+.line.sp::before {
+    content: '';
+    position: absolute;
+    border-top: 15px solid #000000;
+    right: 7%;
+    top: 40%;
+    width:50%;
+    transform: rotate(-53deg);
+    z-index: -2;
+}
+
+.user_btn[data-choice="rock"] {
+    grid-area: rock;
+}
+
+.user_btn[data-choice="scissor"] {
+    grid-area: scissor;
+}
+
+.user_btn[data-choice="paper"] {
+    grid-area: paper;
+}
+
+.user_btn {
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.user {
+    position: relative;
+    width: 7rem;
+    height: 7rem;
+    background: white;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+ .user::before {
+    content: "";
+    position: absolute;
+    width: 130%;
+    height: 130%;
+    border-radius: 50%;
+     z-index: -1;
+} 
+
+.user.rock::before {
+    background-color: #0074B6;
+}
+.user.scissor::before {
+    background-color: #BD00FF;
+}
+.user.paper::before {
+    background-color: #FFA943;
+}
+
+/* results */
+
+.results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    width: 900px;
+    grid-template-areas: "yp blank pp"
+                        "yc winner pc";
+    margin: 6rem auto;
+}
+
+.hide {
+    display: none;
+}
+.picks {
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 19.92px;
+    margin: 20px;
+}
+
+.choice {
+    height: auto;
+    width: auto;
+    border-radius: 50%;
+}
+
+.results.blank {
+    grid-area: blank;
+}
+
+.picks:first-child {
+    grid-area: yp;
+}
+
+.picks:last-child {
+    grid-area: pp;
+}
+
+.choice:first-child {
+    grid-area: yc;
+}
+
+.choice:last-child {
+    grid-area: pc;
+}
+
+.is_winner {
+    grid-area: winner;
+    place-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+}
+.winner {
+    font-size: 39px;
+    font-weight: 800;
+    line-height: 45.7px;
+    color: white;
+    margin-bottom:5px;
+    margin-top: 100px;
+}
+.swinner {
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 29.3px;
+    color: white;
+    margin-bottom:10px;
+}
+
+.circles .user::before{
+    box-shadow: 0 0 0 40px #3B6720, 0 0 5px 60px #1DA82B, 0 0 62px 80px #2E9A25;
+    opacity: 1;
+}
+
+.replay {
+    border: none;
+    background-color: white;
+    color: #6B6B6B;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 17.58px;
+    border-radius: 10px;
+    height: 40px;
+    width: 135px; 
+}
+
+/* Rules */
+
+.ftr{
+    display: flex;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+}
+
+
+.rule {
+    display: flex;
+    font-family: inherit;
+    font-size: 1.32rem;
+    position: relative;
+    background: none;
+    border-radius: 10px;
+    border: 2px solid white;
+    color: white;
+    height: 40px;
+    width: 119px;
+    margin: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.next {
+    display: flex;
+    font-size: 1.32rem;
+    position: relative;
+    border-radius: 10px;
+    border: 2px solid white;
+    color: white;
+    height: 40px;
+    width: 119px;
+    margin: 1rem;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.rules_tab {
+    position: absolute;
+    height: auto;
+    width: 300px;
+    display: grid;
+    border: 7px solid white;
+    border-radius: 9px;
+    background-color: #004429;
+    top: 17.8rem;
+    right: 2rem;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.display-rules {
+    opacity: 1;
+}
+
+.rules_heading > h2 {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.rules_list {
+    margin: 10px 10px 5px 2px; 
+}
+
+.rules_list > li {
+    margin-bottom: 1rem;
+    list-style-type: square;  
+}
+
+li::marker {
+    color: #FFD600;
+    font-size: 30px;
+    line-height: 0.5em;
+}
+
+.rules_btn {
+    display: flex;
+    position:absolute;
+    color: white;
+    background-color: #FF0000;
+    width: 50px;
+    height: 50px;
+    border: 5px solid white;
+    border-radius: 50%;
+    font-size: 34px;
+    font-weight: 400;
+    font-family: "Dangrek", sans-serif;
+    justify-content: center;
+    align-items: center;
+    top: -30px;
+    right: -30px;
+}
+
+
